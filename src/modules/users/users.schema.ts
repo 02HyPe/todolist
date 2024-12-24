@@ -1,6 +1,6 @@
 import z from "zod";
 
-const createUserBodySchema = z.object({
+export const createUserBodySchema = z.object({
   userName: z.string(),
   email: z.string().email(),
   password: z.string().min(6),
@@ -8,7 +8,7 @@ const createUserBodySchema = z.object({
 
 export type CreateUserBodyType = z.infer<typeof createUserBodySchema>;
 
-const loginUserBodySchema = z.object({
+export const loginUserBodySchema = z.object({
   userName: z.string(),
   password: z.string(),
 });
